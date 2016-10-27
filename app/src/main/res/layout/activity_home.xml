@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_home"
+    tools:context="com.kk.future.safehelper.HomeActivity">
+
+    <include layout="@layout/actionbar"/>
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="65dp"
+        android:src="@drawable/head"/>
+
+    <TextView
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="100dp"
+        android:text="Hi,我是 SafeHelper 安全助手,\n       现在还在成长中，请多多指教!"
+        android:textColor="#9000"
+        />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="@android:color/black"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/sysoptimize"
+                android:gravity="center_vertical|center"
+                android:text="缓存清理"
+                android:textColor="#9000"
+                android:textSize="23sp"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/taskmanager"
+                android:fadingEdge="horizontal|vertical"
+                android:fadingEdgeLength="1dp"
+                android:gravity="center_vertical|center"
+                android:text="进程管理"
+                android:textColor="#9000"
+                android:textSize="23sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/netmanager"
+                android:gravity="center_vertical|center"
+                android:text="流量管理"
+                android:textColor="#9000"
+                android:textSize="23sp"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/safe"
+                android:gravity="center_vertical|center"
+                android:text="手机防盗"
+                android:textColor="#9000"
+                android:textSize="23sp"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/callmsgsafe"
+                android:gravity="center_vertical|center"
+                android:text="通信卫士"
+                android:textColor="#9000"
+                android:textSize="23sp"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/atools"
+                android:gravity="center_vertical|center"
+                android:text="工具宝箱"
+                android:textColor="#9000"
+                android:textSize="23sp"
+                />
+        </TableRow>
+    </TableLayout>
+
+
+</RelativeLayout>
