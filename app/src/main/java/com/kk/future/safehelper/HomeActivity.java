@@ -1,6 +1,7 @@
 package com.kk.future.safehelper;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -8,12 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kk.future.safehelper.bean.VersionBean;
 import com.kk.future.safehelper.dialog.UpdateDialog;
+import com.kk.future.safehelper.fragment.ContainerActivity;
 import com.kk.future.safehelper.signal.CommonSignal;
-import com.kk.future.safehelper.utils.LogCatUtil;
 import com.kk.future.safehelper.utils.SuperToast;
 import com.kk.future.safehelper.utils.VersionUtil;
 
@@ -26,6 +26,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private URL mUpdateURL;
     private ImageButton mIb_setting;
     private TextView tv_clean, tv_process, tv_net, tv_phonesafe, tv_communication, tv_toolbox;
+    private Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,33 +93,46 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ib_actionbar_setting:
-                LogCatUtil.getInstance().i("onClick", "设置被点击了");
                 SuperToast.show(HomeActivity.this, "设置被点击了");
-                Toast.makeText(HomeActivity.this, "设置被点击了", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, ContainerActivity.class);
+                intent.setFlags(CommonSignal.FunArray.SETTING);
+                startActivityForResult(intent, CommonSignal.FunArray.SETTING);
                 break;
             case R.id.tv_home_clean:
                 SuperToast.show(mContext, "缓存清理被点击了");
-
+                intent = new Intent(this, ContainerActivity.class);
+                intent.setFlags(CommonSignal.FunArray.CLEAN);
+                startActivityForResult(intent, CommonSignal.FunArray.CLEAN);
                 break;
             case R.id.tv_home_phonesafe:
                 SuperToast.show(mContext, "手机安全被点击了");
-
+                intent = new Intent(this, ContainerActivity.class);
+                intent.setFlags(CommonSignal.FunArray.PHONE_SAFE);
+                startActivityForResult(intent, CommonSignal.FunArray.PHONE_SAFE);
                 break;
             case R.id.tv_home_communication:
                 SuperToast.show(mContext, "通信卫士被点击了");
-
+                intent = new Intent(this, ContainerActivity.class);
+                intent.setFlags(CommonSignal.FunArray.COMMUNICATION);
+                startActivityForResult(intent, CommonSignal.FunArray.COMMUNICATION);
                 break;
             case R.id.tv_home_toolbox:
                 SuperToast.show(mContext, "工具箱被点击了");
-
+                intent = new Intent(this, ContainerActivity.class);
+                intent.setFlags(CommonSignal.FunArray.TOOL_BOX);
+                startActivityForResult(intent, CommonSignal.FunArray.TOOL_BOX);
                 break;
             case R.id.tv_home_net:
                 SuperToast.show(mContext, "网络管理被点击了");
-
+                intent = new Intent(this, ContainerActivity.class);
+                intent.setFlags(CommonSignal.FunArray.NET);
+                startActivityForResult(intent, CommonSignal.FunArray.NET);
                 break;
             case R.id.tv_home_process:
                 SuperToast.show(mContext, "进程管理被点击了");
-
+                intent = new Intent(this, ContainerActivity.class);
+                intent.setFlags(CommonSignal.FunArray.PROCESS);
+                startActivityForResult(intent, CommonSignal.FunArray.PROCESS);
                 break;
         }
     }

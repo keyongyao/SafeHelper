@@ -15,4 +15,17 @@ public class CommonSignal {
         public final static int HAS_lATEST_VERSION_YES = 1000;
         public final static int HAS_lATEST_VERSION_NO = 1001;
     }
+
+    /**
+     * 主界面的功能排列
+     */
+    public static class FunArray {
+        public final static int CLEAN = 1;
+        public final static int PROCESS = 2;
+        public final static int NET = 3;
+        public final static int PHONE_SAFE = 4;
+        public final static int COMMUNICATION = 5;
+        public final static int TOOL_BOX = 6;
+        public final static int SETTING = 9;
+    }
 }
