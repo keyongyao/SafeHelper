@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 23
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "com.kk.future.safehelper"
@@ -21,6 +21,12 @@ android {
     productFlavors {
     }
 }
+// 增加  aar
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -29,4 +35,5 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
+    compile(name: 'xutils-3.3.36', ext: 'aar')
 }

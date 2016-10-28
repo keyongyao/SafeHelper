@@ -4,6 +4,9 @@ import android.app.Application;
 
 import com.kk.future.safehelper.utils.LogCatUtil;
 
+import org.xutils.BuildConfig;
+import org.xutils.x;
+
 /**
  * Author: Future <br>
  * QQ: <br>
@@ -17,5 +20,9 @@ public class CustomApplication extends Application {
         super.onCreate();
         // 启用 LogCatUtil
         LogCatUtil.getInstance().enableLog(true);
+        // 配置 xUtil3
+        x.Ext.init(this);
+        x.Ext.setDebug(BuildConfig.DEBUG);  // 是否开启 xUtil3 的调试
+
     }
 }

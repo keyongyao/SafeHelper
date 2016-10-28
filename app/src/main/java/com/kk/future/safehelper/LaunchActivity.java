@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.kk.future.safehelper.utils.VersionUtil;
 
 public class LaunchActivity extends AppCompatActivity {
-    private TextView tv_version, tv_skipWaite, tv_checkingVersion;
+    private TextView tv_version, tv_skipWaite;
     private Handler mHandler;
 
     @Override
@@ -24,6 +24,7 @@ public class LaunchActivity extends AppCompatActivity {
         mHandler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
+
                 // 0 秒时 自动跳转 到 HomeActivity
                 if (msg.what == 0) {
                     mHandler.removeCallbacksAndMessages(null);
@@ -36,8 +37,13 @@ public class LaunchActivity extends AppCompatActivity {
         };
         initView();
         setter();
+
+
     }
 
+    /**
+     * 设置一些控件的监视器
+     */
     private void setter() {
         // 5秒后自动跳转 到 HomeActivity
         mHandler.sendEmptyMessage(5);
@@ -53,7 +59,10 @@ public class LaunchActivity extends AppCompatActivity {
 
     }
 
-    //  初始化 子 View
+    /**
+     * 初始化 子 View
+     */
+
     private void initView() {
         tv_version = (TextView) findViewById(R.id.tv_launch_version);
         tv_version.setText("版本：" + VersionUtil.getLocalVersionName(this));

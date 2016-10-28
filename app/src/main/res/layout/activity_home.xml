@@ -45,9 +45,11 @@
             >
 
             <TextView
+                android:id="@+id/tv_home_clean"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:drawableLeft="@drawable/sysoptimize"
                 android:gravity="center_vertical|center"
                 android:text="缓存清理"
@@ -56,9 +58,11 @@
                 />
 
             <TextView
+                android:id="@+id/tv_home_process"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:drawableLeft="@drawable/taskmanager"
                 android:fadingEdge="horizontal|vertical"
                 android:fadingEdgeLength="1dp"
@@ -74,9 +78,11 @@
             android:layout_weight="1">
 
             <TextView
+                android:id="@+id/tv_home_net"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:drawableLeft="@drawable/netmanager"
                 android:gravity="center_vertical|center"
                 android:text="流量管理"
@@ -85,9 +91,11 @@
                 />
 
             <TextView
+                android:id="@+id/tv_home_phonesafe"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:drawableLeft="@drawable/safe"
                 android:gravity="center_vertical|center"
                 android:text="手机防盗"
@@ -102,9 +110,11 @@
             android:layout_weight="1">
 
             <TextView
+                android:id="@+id/tv_home_communication"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:drawableLeft="@drawable/callmsgsafe"
                 android:gravity="center_vertical|center"
                 android:text="通信卫士"
@@ -113,9 +123,11 @@
                 />
 
             <TextView
+                android:id="@+id/tv_home_toolbox"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:drawableLeft="@drawable/atools"
                 android:gravity="center_vertical|center"
                 android:text="工具宝箱"
