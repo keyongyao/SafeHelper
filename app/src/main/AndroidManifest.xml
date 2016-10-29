@@ -8,6 +8,8 @@
     <!--获取APP 缓存大小和 清理缓存 权限-->
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
     <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <!--进程管理  杀死后台进程-->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
     <application
         android:name=".CustomApplication"
         android:allowBackup="true"

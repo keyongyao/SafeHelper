@@ -28,4 +28,12 @@ public class CommonSignal {
         public final static int TOOL_BOX = 6;
         public final static int SETTING = 9;
     }
+
+    /**
+     * 进程模块一些相关的常量
+     */
+    public static class Process {
+        public final static String IS_HIDDEN_SYSPROCESS = "is_hidden_sysProcess";
+        public final static String LOCK_SCREEN_CLEAR = "lock_screen_clear";
+    }
 }
