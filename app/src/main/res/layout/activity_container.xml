@@ -2,15 +2,13 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.kk.future.safehelper.fragment.ContainerActivity">
-
-    <FrameLayout
-        android:id="@+id/fl_container"
+    <!--将会被 Fragment 替换-->
+    <RelativeLayout
+        android:id="@+id/rl_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f00"/>
+        />
 </LinearLayout>

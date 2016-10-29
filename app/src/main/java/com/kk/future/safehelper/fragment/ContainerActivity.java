@@ -31,31 +31,31 @@ public class ContainerActivity extends AppCompatActivity {
         FragmentTransaction transaction = fm.beginTransaction();
         switch (flags) {
             case CommonSignal.FunArray.CLEAN:
-                transaction.replace(R.id.fl_container, new FragmentClean(), "clean");
+                transaction.replace(R.id.rl_container, new FragmentClean(), "clean");
                 transaction.commit();
                 break;
             case CommonSignal.FunArray.NET:
-                transaction.replace(R.id.fl_container, new FragmentNet(), "net");
+                transaction.replace(R.id.rl_container, new FragmentNet(), "net");
                 transaction.commit();
                 break;
             case CommonSignal.FunArray.PROCESS:
-                transaction.replace(R.id.fl_container, new FragmentProcess(), "process");
+                transaction.replace(R.id.rl_container, new FragmentProcess(), "process");
                 transaction.commit();
                 break;
             case CommonSignal.FunArray.PHONE_SAFE:
-                transaction.replace(R.id.fl_container, new FragmentPhoneSafe(), "phonesafe");
+                transaction.replace(R.id.rl_container, new FragmentPhoneSafe(), "phonesafe");
                 transaction.commit();
                 break;
             case CommonSignal.FunArray.TOOL_BOX:
-                transaction.replace(R.id.fl_container, new FragmentToolBox(), "toolbox");
+                transaction.replace(R.id.rl_container, new FragmentToolBox(), "toolbox");
                 transaction.commit();
                 break;
             case CommonSignal.FunArray.COMMUNICATION:
-                transaction.replace(R.id.fl_container, new FragmentCommunication(), "communication");
+                transaction.replace(R.id.rl_container, new FragmentCommunication(), "communication");
                 transaction.commit();
                 break;
             case CommonSignal.FunArray.SETTING:
-                transaction.replace(R.id.fl_container, new FragmentSetting(), "setting");
+                transaction.replace(R.id.rl_container, new FragmentSetting(), "setting");
                 transaction.commit();
                 break;
 

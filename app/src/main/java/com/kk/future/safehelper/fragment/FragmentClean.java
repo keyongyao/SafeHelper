@@ -3,15 +3,14 @@ package com.kk.future.safehelper.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.kk.future.safehelper.R;
-
-import java.util.Date;
 
 /**
  * Author: Future <br>
@@ -21,34 +20,38 @@ import java.util.Date;
  */
 
 public class FragmentClean extends Fragment {
-    TextView tv;
-    Button bt;
+    private ImageButton setting;
+    private TextView title;
+    private FragmentTabHost mTabHost;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.layout_clean, null);
+        View view = inflater.inflate(R.layout.layout_clean, null);
+        // 找到 fragmentTabHost
+        mTabHost = (FragmentTabHost) view.findViewById(R.id.fth_clean);
+        mTabHost.setup(getActivity(), getChildFragmentManager(), R.id.fl_clean_container);
+        mTabHost.addTab(mTabHost.newTabSpec("cache").setIndicator("缓存清理"),
+                FragmentCleanCache.class, null);
+        mTabHost.addTab(mTabHost.newTabSpec("sdcard").setIndicator("SD卡清理"),
+                FragmentCleanSDcard.class, null);
+
+        return view;
     }
 
-    // 此方法  在 onCreateView() 后执行
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        tv = (TextView) view.findViewById(R.id.textView2);
-        tv.setText(getClass().getName());
-        bt = (Button) view.findViewById(R.id.button);
-        setter();
+        setting = (ImageButton) view.findViewById(R.id.ib_actionbar_setting);
+        setting.setVisibility(View.GONE);
+        title = (TextView) view.findViewById(R.id.tv_action_title);
+        title.setText("缓存清理");
+
     }
 
-    /**
-     * 设置点击事件
-     */
-    private void setter() {
-        bt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tv.setText(new Date().toString());
-            }
-        });
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mTabHost = null;
     }
+
 }
