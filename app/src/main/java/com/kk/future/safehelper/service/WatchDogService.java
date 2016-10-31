@@ -60,9 +60,9 @@ public class WatchDogService extends Service {
                     List<RunningTaskInfo> runningTasks = am.getRunningTasks(1);
                     RunningTaskInfo runningTaskInfo = runningTasks.get(0);
                     //5.获取栈顶的activity,然后在获取此activity所在应用的包名
-                    String packagename = runningTaskInfo.topActivity.getClassName();
+                    String packagename = runningTaskInfo.topActivity.getPackageName();
                     // TODO: 2016/10/31  5.0  输出 com.android.launcher
-                    LogCatUtil.getInstance().i("abc", packagename);
+                    LogCatUtil.getInstance().i("abc", packagename + "  " + mPacknameList.toString());
                     //如果任务栈指向应用有切换,将mSkipPackagename空字符串
 
                     //6.拿此包名在已加锁的包名集合中去做比对,如果包含次包名,则需要弹出拦截界面

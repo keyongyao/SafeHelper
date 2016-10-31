@@ -1,5 +1,7 @@
 package com.kk.future.safehelper.signal;
 
+import com.kk.future.safehelper.R;
+
 /**
  * Author: Future <br>
  * QQ: <br>
@@ -57,7 +59,16 @@ public class CommonSignal {
         public static final String BLACK_NUM = "black_num";
         public static final String INCOME_LOCATION = "income_location";
         public static final String APP_LOCK = "app_lock";
-
+        public static final String CHOOSETYPE = "choose_type";
+        public static final String[] STYLE = {"蓝色", "灰色", "青色", "橙色", "透明"};
+        public static final int[] STYLEID = {R.drawable.call_locate_blue,
+                R.drawable.call_locate_gray,
+                R.drawable.call_locate_green,
+                R.drawable.call_locate_orange,
+                R.drawable.call_locate_white};
+        public static final String LOCATIONX = "location_x";
+        public static final String LOCATIONY = "location_y";
     }
+
 
 }

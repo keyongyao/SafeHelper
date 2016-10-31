@@ -82,6 +82,12 @@
         <service android:name=".service.BlackCallService"/>
         <service android:name=".service.BlackSMSService"/>
         <service android:name=".service.WatchDogService"/>
+
+        <activity android:name=".activity.EnterPsdActivity"/>
+        <service android:name=".service.ShowLocationService"/>
+        <activity
+            android:name=".activity.SetPositionActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
     </application>
 
 </manifest>
