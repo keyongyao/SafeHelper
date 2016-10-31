@@ -2,22 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="#0f0"
+              android:background="#90f0"
               android:orientation="vertical"
               android:weightSum="1">
 
     <include layout="@layout/actionbar"/>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"/>
+    <TextView
+        android:id="@+id/tv_atool_queryLocation"
+        style="@style/phoneGuard_overView_function_item"
+        android:layout_margin="10dp"
+        android:background="@drawable/gradient_box"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="归属地查询"/>
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.06"
-        android:text="TextView"/>
+        android:id="@+id/tv_atool_SMSbackup"
+        style="@style/phoneGuard_overView_function_item"
+        android:layout_margin="10dp"
+        android:background="@drawable/gradient_box"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="短信备份还原"/>
+
+    <TextView
+        android:id="@+id/tv_atool_query_phoneNum"
+        style="@style/phoneGuard_overView_function_item"
+        android:layout_margin="10dp"
+        android:background="@drawable/gradient_box"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="常用号码查询"/>
+
+    <TextView
+        android:id="@+id/tv_atool_applock"
+        style="@style/phoneGuard_overView_function_item"
+        android:layout_margin="10dp"
+        android:background="@drawable/gradient_box"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="程序锁"/>
+
+    <TextView
+        android:id="@+id/tv_atool_whereIam"
+        style="@style/phoneGuard_overView_function_item"
+        android:layout_margin="10dp"
+        android:background="@drawable/gradient_box"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="查看我的定位"/>
 </LinearLayout>

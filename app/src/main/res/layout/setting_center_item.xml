@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_setting_item_title"
+        style="@style/setting_item_style"
+        android:text="Title"/>
+
+    <TextView
+        android:id="@+id/tv_closeOropen"
+        style="@style/setting_item_style"
+        android:layout_below="@id/tv_setting_item_title"
+        android:text="subTitle"/>
+
+    <CheckBox
+        android:id="@+id/cb_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:clickable="false"
+        android:focusableInTouchMode="false"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tv_closeOropen"
+        android:layout_margin="3dp"
+        android:background="#eb000000"/>
+
+</RelativeLayout>

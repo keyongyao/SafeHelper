@@ -24,4 +24,16 @@ public class SPUtil {
         editor.putBoolean(key, value);
         editor.commit();
     }
+
+    public static String getString(Context context, String key) {
+        SharedPreferences sp = context.getSharedPreferences(CONFIG, Context.MODE_PRIVATE);
+        return sp.getString(key, "");
+    }
+
+    public static void putString(Context context, String key, String value) {
+        SharedPreferences sp = context.getSharedPreferences(CONFIG, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString(key, value);
+        editor.commit();
+    }
 }

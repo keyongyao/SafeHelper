@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.kk.future.safehelper.fragment.ContainerActivity">
     <!--将会被 Fragment 替换-->
-    <RelativeLayout
+    <FrameLayout
         android:id="@+id/rl_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

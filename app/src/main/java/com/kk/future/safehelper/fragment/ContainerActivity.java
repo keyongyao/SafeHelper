@@ -45,6 +45,7 @@ public class ContainerActivity extends AppCompatActivity {
             case CommonSignal.FunArray.PHONE_SAFE:
                 transaction.replace(R.id.rl_container, new FragmentPhoneSafe(), "phonesafe");
                 transaction.commit();
+
                 break;
             case CommonSignal.FunArray.TOOL_BOX:
                 transaction.replace(R.id.rl_container, new FragmentToolBox(), "toolbox");
@@ -62,4 +63,6 @@ public class ContainerActivity extends AppCompatActivity {
         }
 
     }
+
+
 }

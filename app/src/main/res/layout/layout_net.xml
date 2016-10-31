@@ -1,23 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#0f0"
-              android:orientation="vertical"
-              android:weightSum="1">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    >
 
-    <include layout="@layout/actionbar"/>
+    <include
+        android:id="@+id/ab"
+        layout="@layout/actionbar"/>
 
-    <Button
-        android:id="@+id/button"
+    <LinearLayout
+        android:id="@+id/ll_net_menus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"/>
+        android:layout_alignParentBottom="true"
+        android:background="#9555"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView2"
+        <RadioGroup
+            android:id="@+id/rg_net_mennu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_net_monitor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:drawablePadding="10dp"
+                android:drawableTop="@drawable/flow_wediget_item_selector1"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="流量监控"
+                android:textColor="@drawable/flow_wediget_item_tvselector"/>
+
+            <RadioButton
+                android:id="@+id/rb_net_firewall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableTop="@drawable/flow_wediget_item_selector2"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="联网防火墙"
+                android:textColor="@drawable/flow_wediget_item_tvselector"/>
+
+            <RadioButton
+                android:id="@+id/rb_net_traffic_sort"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableTop="@drawable/flow_wediget_item_selector3"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="本月流量排行"
+                android:textColor="@drawable/flow_wediget_item_tvselector"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_net_childContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.06"
-        android:text="TextView"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_net_menus"
+        android:layout_below="@id/ab"
+        android:background="#fbff00">
+    </FrameLayout>
+</RelativeLayout>

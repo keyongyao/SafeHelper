@@ -36,4 +36,17 @@ public class CommonSignal {
         public final static String IS_HIDDEN_SYSPROCESS = "is_hidden_sysProcess";
         public final static String LOCK_SCREEN_CLEAR = "lock_screen_clear";
     }
+
+    /**
+     * 手机安全模块一些相关的常量
+     */
+    public static class PhoneSafe {
+        public final static String IS_SET_PWD = "is_set_PWD";
+        public final static String PWD = "pwd";
+        public final static String IS_BIND_SIM = "is_bind_sim";
+        public final static String SAFE_NUM = "safenum";
+        public final static String IS_GUARD_OPEN = "is_guard_open";
+        public final static String SIM_SNUM = "sim_snum";
+    }
+
 }

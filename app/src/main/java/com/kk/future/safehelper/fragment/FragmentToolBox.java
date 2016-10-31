@@ -6,12 +6,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.kk.future.safehelper.R;
-
-import java.util.Date;
 
 /**
  * Author: Future <br>
@@ -21,8 +19,9 @@ import java.util.Date;
  */
 
 public class FragmentToolBox extends Fragment {
-    TextView tv;
-    Button bt;
+    private TextView title;
+    private ImageButton setting;
+    private TextView tvQlocation, tvBack, tvCommonNum, tvAppLock, tvWhere;
 
     @Nullable
     @Override
@@ -32,19 +31,32 @@ public class FragmentToolBox extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        tv = (TextView) view.findViewById(R.id.textView2);
-        tv.setText(getClass().getName());
-        bt = (Button) view.findViewById(R.id.button);
-        setter();
+        initUI(view);
+        setListeners();
     }
 
-    private void setter() {
-        bt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tv.setText(new Date().toString());
-            }
-        });
+    /**
+     * 设置 事件点击 监视器
+     */
+    private void setListeners() {
+
     }
+
+    /**
+     * 初始化 UI
+     *
+     * @param view
+     */
+    private void initUI(View view) {
+        title = (TextView) view.findViewById(R.id.tv_action_title);
+        title.setText("高级工具");
+        setting = (ImageButton) view.findViewById(R.id.ib_actionbar_setting);
+        setting.setVisibility(View.GONE);
+        tvQlocation = (TextView) view.findViewById(R.id.tv_atool_queryLocation);
+        tvBack = (TextView) view.findViewById(R.id.tv_atool_SMSbackup);
+        tvCommonNum = (TextView) view.findViewById(R.id.tv_atool_query_phoneNum);
+        tvAppLock = (TextView) view.findViewById(R.id.tv_atool_applock);
+        tvWhere = (TextView) view.findViewById(R.id.tv_atool_whereIam);
+    }
+
 }

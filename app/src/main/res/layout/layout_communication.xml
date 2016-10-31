@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#0f0"
-              android:orientation="vertical"
-              android:weightSum="1">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#50f0"
+    >
 
-    <include layout="@layout/actionbar"/>
-
+    <include
+        android:id="@+id/action_bar"
+        layout="@layout/actionbar"/>
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_blcknum_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"/>
+        android:layout_alignParentBottom="true"
+        android:background="@null"
+        android:text="添加"/>
 
-    <TextView
-        android:id="@+id/textView2"
+    <ListView
+        android:id="@+id/lv_blacknum_show"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.06"
-        android:text="TextView"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_blcknum_add"
+        android:layout_below="@id/action_bar"
+        android:background="#8cfa05">
+    </ListView>
+</RelativeLayout>

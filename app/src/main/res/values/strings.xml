@@ -1,6 +1,32 @@
 <resources>
     <string name="app_name">SafeHelper</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="admin_receiver_status">
+        SafeHelper设备管理状态
+    </string>
+    <string name="admin_receiver_status_enabled">
+        SafeHelper设备管理启用
+    </string>
+    <string name="admin_receiver_status_disable_warning">
+        SafeHelper设备管理禁用警告\n
+        禁用将会失去如下功能：\n
+        远程锁屏\n
+        远程设置锁屏密码\n
+        远程擦除数据\n
+    </string>
+    <string name="admin_receiver_status_disabled">
+        SafeHelper设备管理禁用
+    </string>
+    <string name="admin_receiver_status_pw_changed">
+        我的设备管理密码改变
+    </string>
+    <string name="sample_device_admin">
+        SafeHelper设备管理
+    </string>
+    <string name="sample_device_admin_description">
+        功能如下:\n
+        远程锁屏\n
+        远程设置锁屏密码\n
+        远程擦除数据\n
+    </string>
 </resources>

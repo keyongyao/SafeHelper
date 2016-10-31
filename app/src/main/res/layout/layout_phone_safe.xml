@@ -1,23 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#0f0"
-              android:orientation="vertical"
-              android:weightSum="1">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_abc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#20f0"
+    android:orientation="vertical">
 
     <include layout="@layout/actionbar"/>
 
-    <Button
-        android:id="@+id/button"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"/>
+        android:padding="15dp">
 
-    <TextView
-        android:id="@+id/textView2"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="安全号码"
+            android:textColor="#000"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/tv_phonesafe_safenum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:text="**********"
+            android:textColor="#000"
+            android:textSize="20sp"/>
+
+        <View
+            android:id="@+id/devider"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_below="@id/tv_phonesafe_safenum"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/listview_divider"/>
+
+        <TextView
+            android:id="@+id/tv_phonesafe_lockstate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/devider"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="防盗保护关闭状态"
+            android:textColor="#000"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:id="@+id/iv_phonesafe_lockstate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/devider"
+            android:layout_marginRight="20dp"
+            android:paddingBottom="3dp"
+            android:src="@drawable/unlock"/>
+
+        <View
+            android:id="@+id/devider2"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_below="@id/iv_phonesafe_lockstate"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/listview_divider"/>
+
+        <Button
+            android:id="@+id/btn_phonesafe_reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/devider2"
+            android:background="@drawable/btn_click_sytle"
+            android:text="进入设置向导"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+
+    <!--功能说明-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.06"
-        android:text="TextView"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/gradient_box"
+            android:text="功能简介"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/tv_location"
+            style="@style/phoneGuard_overView_function_item"
+            android:clickable="true"
+            android:text="GPS追踪：#*location*#"/>
+
+        <TextView
+            android:id="@+id/tv_playAlarm"
+            style="@style/phoneGuard_overView_function_item"
+            android:clickable="true"
+            android:text="播放报警音乐：#*alarmMusic*#"/>
+
+        <TextView
+            android:id="@+id/tv_phonesafe_DM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:background="@drawable/skip_waite_bg"
+            android:clickable="true"
+            android:padding="8dp"
+            android:text="点我激活下面功能"
+            android:textColor="#bbb"/>
+
+        <TextView
+            android:id="@+id/tv_wipedata"
+            style="@style/phoneGuard_overView_function_item"
+
+            android:clickable="true"
+            android:text="远程删除数据：#*wipedata*#"/>
+
+        <TextView
+            android:id="@+id/tv_locakscreen"
+            style="@style/phoneGuard_overView_function_item"
+            android:clickable="true"
+            android:text="远程锁屏：#*lockscreen*#"/>
+    </LinearLayout>
+
+
 </LinearLayout>

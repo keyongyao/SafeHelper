@@ -231,7 +231,6 @@ public class FragmentCleanCache extends Fragment {
             //3.获取对象调用方法
             method.invoke(mPm, pkgName, mPkgstatsObserver);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
