@@ -25,7 +25,7 @@
         android:clickable="true"
         android:gravity="center_horizontal"
         android:padding="10dp"
-        android:text="短信备份还原"/>
+        android:text="联系人短信备份还原"/>
 
     <TextView
         android:id="@+id/tv_atool_query_phoneNum"
@@ -56,4 +56,14 @@
         android:gravity="center_horizontal"
         android:padding="10dp"
         android:text="查看我的定位"/>
+
+    <TextView
+        android:id="@+id/tv_atool_appMan"
+        style="@style/phoneGuard_overView_function_item"
+        android:layout_margin="10dp"
+        android:background="@drawable/gradient_box"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="程序管理"/>
 </LinearLayout>

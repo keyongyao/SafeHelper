@@ -49,4 +49,15 @@ public class CommonSignal {
         public final static String SIM_SNUM = "sim_snum";
     }
 
+    /**
+     * 设置中心
+     */
+    public static class SettingCenter {
+        public static final String AUTO_UPDATE = "auto_update";
+        public static final String BLACK_NUM = "black_num";
+        public static final String INCOME_LOCATION = "income_location";
+        public static final String APP_LOCK = "app_lock";
+
+    }
+
 }

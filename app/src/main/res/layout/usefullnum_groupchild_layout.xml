@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_atool_usefullNumItem"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:paddingLeft="15dp">
+
+    <TextView
+        android:id="@+id/tv_atool_usefullnum_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="黄庭"
+        android:textColor="#000"
+        android:textSize="27dp"/>
+
+    <TextView
+        android:id="@+id/tv_atool_usefullnum_item_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1312"
+        android:textColor="#000"
+        android:textSize="23dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"/>
+</LinearLayout>

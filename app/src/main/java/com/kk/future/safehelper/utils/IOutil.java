@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 
 public class IOutil {
-    public static void closAll(Closeable... ios) {
+    public static void closeAll(Closeable... ios) {
         for (Closeable io : ios
                 ) {
             if (io != null) {

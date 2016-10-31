@@ -1,21 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#0f0"
-              android:orientation="vertical"
-              android:weightSum="1">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
 
-    <Button
-        android:id="@+id/button"
+    <include layout="@layout/actionbar"/>
+
+    <com.kk.future.safehelper.view.SettingCheckBoxItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.kk.future.safehelper"
+        android:id="@+id/scbiv_autoupdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"/>
+        mobilesafe:close="关闭"
+        mobilesafe:itemTitle="自动更新"
+        mobilesafe:open="开启">
 
-    <TextView
-        android:id="@+id/textView2"
+    </com.kk.future.safehelper.view.SettingCheckBoxItemView>
+
+
+    <com.kk.future.safehelper.view.SettingCheckBoxItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.kk.future.safehelper"
+        android:id="@+id/scbiv_showLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.06"
-        android:text="TextView"/>
+        mobilesafe:close="关闭"
+        mobilesafe:itemTitle="来电电话归属状态"
+        mobilesafe:open="开启">
+
+    </com.kk.future.safehelper.view.SettingCheckBoxItemView>
+
+    <com.kk.future.safehelper.view.SettingChooseView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.kk.future.safehelper"
+        android:id="@+id/scv_settingCenter_chooseStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        mobilesafe:subTitle="透明"
+        mobilesafe:title="设置归属地显示风格">
+    </com.kk.future.safehelper.view.SettingChooseView>
+
+    <com.kk.future.safehelper.view.SettingChooseView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.kk.future.safehelper"
+        android:id="@+id/scv_settingCenter_setPhoneAddrTipPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        mobilesafe:subTitle="点击设置"
+        mobilesafe:title="来电归属地提示框位置">
+
+    </com.kk.future.safehelper.view.SettingChooseView>
+
+    <com.kk.future.safehelper.view.SettingCheckBoxItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.kk.future.safehelper"
+        android:id="@+id/scbiv_balcknum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesafe:close="关闭"
+        mobilesafe:itemTitle="黑名单拦截设置"
+        mobilesafe:open="开启">
+
+    </com.kk.future.safehelper.view.SettingCheckBoxItemView>
+
+    <com.kk.future.safehelper.view.SettingCheckBoxItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.kk.future.safehelper"
+        android:id="@+id/scbiv_applock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesafe:close="关闭"
+        mobilesafe:itemTitle="程序锁设置"
+        mobilesafe:open="开启">
+
+    </com.kk.future.safehelper.view.SettingCheckBoxItemView>
 </LinearLayout>

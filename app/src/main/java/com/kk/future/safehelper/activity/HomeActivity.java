@@ -1,4 +1,4 @@
-package com.kk.future.safehelper;
+package com.kk.future.safehelper.activity;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.kk.future.safehelper.R;
 import com.kk.future.safehelper.bean.VersionBean;
 import com.kk.future.safehelper.dialog.UpdateDialog;
 import com.kk.future.safehelper.fragment.ContainerActivity;
@@ -64,7 +65,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        VersionUtil.checkUpdate(mUpdateURL, mHandler, this);
+        // 检测配置 在决定是否 检查升级
+        if (SPUtil.getBoolean(HomeActivity.this, CommonSignal.SettingCenter.AUTO_UPDATE, false)) {
+            VersionUtil.checkUpdate(mUpdateURL, mHandler, this);
+        }
+
         // 找到 6 个 功能 TextView 和  设置 ImageButton
         initView();
         // 设置事件监听

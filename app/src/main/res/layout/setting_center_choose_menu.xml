@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_setting_choose_sub_menu_title"
+        style="@style/setting_item_style"
+        android:text="Title"/>
+
+    <TextView
+        android:id="@+id/tv_setting_choose_sub_menu_subTitle"
+        style="@style/setting_item_style"
+        android:layout_below="@id/tv_setting_choose_sub_menu_title"
+        android:text="subTitle"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/jiantou1_pressed"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tv_setting_choose_sub_menu_subTitle"
+        android:layout_margin="3dp"
+        android:background="#eb000000"/>
+
+</RelativeLayout>

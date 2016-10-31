@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="15dp"
+              android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_atool_backupSMS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="备份短信"/>
+
+    <Button
+        android:id="@+id/btn_atool_restoreSMS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="还原短信"/>
+
+    <Button
+        android:id="@+id/btn_atool_backupContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="备份联系人"/>
+
+    <Button
+        android:id="@+id/btn_atool_restoreContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="还原联系人"/>
+</LinearLayout>

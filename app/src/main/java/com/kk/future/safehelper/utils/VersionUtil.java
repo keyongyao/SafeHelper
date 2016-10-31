@@ -144,7 +144,7 @@ public class VersionUtil {
         } catch (IOException e) {
             LogCatUtil.getInstance().e(TAG, "检查更新错误：" + new Date() + e.getLocalizedMessage() + "\n" + e.getCause(), null);
         } finally {
-            IOutil.closAll(outputStream, inputStream);
+            IOutil.closeAll(outputStream, inputStream);
         }
         return result;
     }

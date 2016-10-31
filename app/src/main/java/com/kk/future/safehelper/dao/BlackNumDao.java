@@ -12,8 +12,10 @@ import com.kk.future.safehelper.utils.LogCatUtil;
 import java.util.Random;
 
 /**
- * 操作黑名单数据库
- * Created by Administrator on 2016/9/26.
+ * Author: Future <br>
+ * QQ: <br>
+ * Description:操作黑名单数据库的DAO<br>
+ * date: 2016/10/31  17:06.
  */
 
 public class BlackNumDao {
