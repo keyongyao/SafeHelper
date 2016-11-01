@@ -78,6 +78,9 @@ public class FragmentCleanCache extends Fragment {
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case UPDATE_CACHE_APP:
+                        if (getView() == null) {
+                            return;
+                        }
                         View view = View.inflate(getContext(), R.layout.linearlayout_cache_item, null);
 
                         ImageView iv_icon = (ImageView) view.findViewById(R.id.iv_icon);

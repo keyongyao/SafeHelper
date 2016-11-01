@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.kk.future.safehelper.activity.HomeActivity;
 import com.kk.future.safehelper.service.BlackCallService;
 import com.kk.future.safehelper.service.BlackSMSService;
+import com.kk.future.safehelper.service.ShowLocationService;
 import com.kk.future.safehelper.service.WatchDogService;
 import com.kk.future.safehelper.signal.CommonSignal;
 import com.kk.future.safehelper.utils.CopyFileUtil;
@@ -75,6 +76,11 @@ public class LaunchActivity extends AppCompatActivity {
         if (SPUtil.getBoolean(this, CommonSignal.SettingCenter.APP_LOCK, false)
                 && !ServiceUtil.checkRunning(this, "com.kk.future.safehelper.service.WatchDogService")) {
             startService(new Intent(this, WatchDogService.class));
+        }
+        // 如果启用服务并且 服务没在运行  则 启动来电显示归属地服务
+        if (SPUtil.getBoolean(this, CommonSignal.SettingCenter.INCOME_LOCATION, false) &&
+                !ServiceUtil.checkRunning(this, "com.kk.future.safehelper.service.ShowLocationService")) {
+            startService(new Intent(this, ShowLocationService.class));
         }
 
     }

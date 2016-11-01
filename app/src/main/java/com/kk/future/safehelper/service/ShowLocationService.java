@@ -25,8 +25,10 @@ import com.kk.future.safehelper.utils.SPUtil;
 
 
 /**
- * 在来电显示电话的归属地
- * Created by Administrator on 2016/9/24.
+ * Author: Future <br>
+ * QQ: <br>
+ * Description:来电时 显示Toast 来电归属地<br>
+ * date: 2016/11/1  15:45.
  */
 
 public class ShowLocationService extends Service {
@@ -34,22 +36,24 @@ public class ShowLocationService extends Service {
     /**
      * 来电归属地文字
      */
-    TextView textView;
-
+    TextView location;
     WindowManager windowManager;
     /**
      * 来电归属地窗体
      */
     View mytoast;
+    // 处理 DAO  查询的结果
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == FragmentToolBoxQlocation.QUERYRESULT) {
-                textView.setText((String) msg.obj);
+                location.setText((String) msg.obj);
             }
         }
     };
+    // 电弧状态监视器
     PhoneStateListener stateListener;
+    // 电话管理服务
     TelephonyManager service;
 
     @Override
@@ -86,11 +90,16 @@ public class ShowLocationService extends Service {
     }
 
     private void reMoveMyToast() {
-        if (windowManager != null && textView != null && mytoast != null) {
+        if (windowManager != null && location != null && mytoast != null) {
             windowManager.removeView(mytoast);
         }
     }
 
+    /**
+     * 显示来电归属地
+     *
+     * @param incomingNumber
+     */
     private void showMyToast(String incomingNumber) {
         // 自定义Toast
         WindowManager.LayoutParams mParams = new WindowManager.LayoutParams();
@@ -100,21 +109,22 @@ public class ShowLocationService extends Service {
         params.format = PixelFormat.TRANSLUCENT;
         params.type = WindowManager.LayoutParams.TYPE_TOAST;
         params.setTitle("Toast");
-        params.flags = WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
-        //              | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE;  使其可触摸
+        params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
+//                | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE	默认能够被触摸
+                | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
         params.gravity = Gravity.TOP + Gravity.LEFT;
         mytoast = View.inflate(getApplicationContext(), R.layout.mytoast, null);
-        textView = (TextView) mytoast.findViewById(R.id.tv_myToast);
+        location = (TextView) mytoast.findViewById(R.id.tv_myToast);
         // 读取用户配置的样式
         int sytleID = SPUtil.getInt(getApplicationContext(), CommonSignal.SettingCenter.CHOOSETYPE);
-        textView.setBackgroundResource(CommonSignal.SettingCenter.STYLEID[sytleID]);
+        location.setBackgroundResource(CommonSignal.SettingCenter.STYLEID[sytleID]);
         QueryLocationDao.query(getApplicationContext(), incomingNumber, handler);
         windowManager = (WindowManager) getSystemService(Service.WINDOW_SERVICE);
         params.x = SPUtil.getInt(getApplicationContext(), CommonSignal.SettingCenter.LOCATIONX);
         params.y = SPUtil.getInt(getApplicationContext(), CommonSignal.SettingCenter.LOCATIONY);
-
         windowManager.addView(mytoast, params);
         // 设置 触摸事件
+
         mytoast.setOnTouchListener(new View.OnTouchListener() {
             // 事件的起始坐标
             int startY;
@@ -142,10 +152,7 @@ public class ShowLocationService extends Service {
                         params.y = params.y + disY;
 
                         // 不让控件跑到屏幕外边去 返回 不更新
-
-
                         // 设置 控件的位置
-
                         windowManager.updateViewLayout(mytoast, params);
 
                         startX = (int) event.getRawX();
@@ -153,6 +160,7 @@ public class ShowLocationService extends Service {
                         break;
                     }
                     case MotionEvent.ACTION_UP: {
+
                         // 保存 控件的当前位置
                         SPUtil.putInt(getApplicationContext(), CommonSignal.SettingCenter.LOCATIONX, params.x);
                         SPUtil.putInt(getApplicationContext(), CommonSignal.SettingCenter.LOCATIONY, params.y);

@@ -64,5 +64,9 @@ public class ContainerActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        getSupportFragmentManager().popBackStack();
+        super.onBackPressed();
+    }
 }

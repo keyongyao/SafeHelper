@@ -89,7 +89,7 @@ public class FragmentSetting extends Fragment {
                     getContext().startService(new Intent(getContext(), BlackCallService.class));
                     getContext().startService(new Intent(getContext(), BlackSMSService.class));
                 } else {
-                    if (ServiceUtil.checkRunning(getActivity(), "com/kk/future/safehelper/service/BlackCallService.java")) {
+                    if (ServiceUtil.checkRunning(getActivity(), "com.kk.future.safehelper.service.BlackCallService")) {
                         getContext().stopService(new Intent(getContext(), BlackCallService.class));
 
                     }
